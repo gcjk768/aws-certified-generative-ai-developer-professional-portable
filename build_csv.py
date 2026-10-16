@@ -201,6 +201,11 @@ if os.path.exists(_f):
 else:
     print("skip (missing)", _f)
 
+# 5. Second batch of online sources (2026-10-16 research): see online_parsers.py
+sys.path.insert(0, HERE)          # python -I drops the script dir from sys.path
+import online_parsers
+online_parsers.parse_all(ON, add)
+
 # dedupe by first 80 chars of the stem
 seen, uniq = set(), []
 for r in rows:
@@ -232,6 +237,12 @@ SHORT = {"Vendor sample questions (AIP-C01.docx)": "Vendor samples",
          "open-exam-prep.com free practice": "open-exam-prep", "certsafari.com free sample questions": "CertSafari samples",
          "certland.net free practice questions": "Certland samples",
          **{f"JeremyEngineer practice exam, {l} (GitHub, MIT)": f"JeremyEngineer {l}" for l in ("easy", "hard", "veryhard")},
+         "himanshu-nakrani/aws-ai-dev-prof original questions (GitHub)": "himanshu-nakrani bank",
+         "jrajath94/aws-aip-c01-study-guide question bank (GitHub)": "jrajath94 bank",
+         "michaelgarcia/educational-aws-gen-ai-certification-prep (GitHub, MIT)": "michaelgarcia prep exam",
+         "tunglt-0058/aip-c01-lesson-learned practice questions (GitHub, CC BY 4.0)": "tunglt practice",
+         "KodeKloud free AIP-C01 practice test": "KodeKloud free test",
+         "mankale/aipc01-exam-skill sample questions (GitHub)": "mankale samples",
          **{f"AWS Skill Builder practice set {n}": f"Skill Builder set {n}" for n in range(1, 10)}}
 bot_path = os.path.join(HERE, "data", "questions.csv")
 os.makedirs(os.path.dirname(bot_path), exist_ok=True)

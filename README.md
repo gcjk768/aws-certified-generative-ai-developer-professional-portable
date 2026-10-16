@@ -24,10 +24,16 @@ Same bot as the [SAP-C03 one](https://github.com/gcjk768/aws-certified-solutions
 | [open-exam-prep.com](https://open-exam-prep.com/practice/aws-genai-developer-pro) | 100 | `fetch_sources.py` | site content, with explanations |
 | [certsafari.com](https://certsafari.com/aws/gen-ai-developer-professional/practice-questions) free samples | 35 | `fetch_sources.py` | site content, with explanations |
 | [certland.net](https://certland.net/exams/aws-certified-generative-ai-developer-professional-aip-c01/practice-questions/) free samples | 8 | `fetch_sources.py` | site content, with explanations |
+| [himanshu-nakrani/aws-ai-dev-prof](https://github.com/himanshu-nakrani/aws-ai-dev-prof) | 252 | `sources/online/` | original questions, no licence file: personal use |
+| [jrajath94/aws-aip-c01-study-guide](https://github.com/jrajath94/aws-aip-c01-study-guide) | 196 | `sources/online/` | no licence: personal use |
+| [michaelgarcia/educational-aws-gen-ai-certification-prep](https://github.com/michaelgarcia/educational-aws-gen-ai-certification-prep) | 76 | `sources/online/` | MIT |
+| [KodeKloud free practice test](https://kodekloud.com/practice-test/aws-certified-generative-ai-developer-professional-aip-c01) | 24 | `sources/online/` | site content |
+| [tunglt-0058/aip-c01-lesson-learned](https://github.com/tunglt-0058/aip-c01-lesson-learned) | 19 | `sources/online/` | CC BY 4.0 |
+| [mankale/aipc01-exam-skill](https://github.com/mankale/aipc01-exam-skill) | 5 | `sources/online/` | no licence: personal use |
 | Your own files in `sources/` (Skill Builder practice sets, vendor samples) | private | by hand | personal use, never committed |
 | `banks/*.md` | authored banks in the format in `AGENT.md` | repo | MIT |
 
-`python fetch_sources.py` downloads the online sources once (a few seconds apart, robots.txt allowed, no logins), `python -I build_csv.py` parses them, dedupes by stem and writes the CSVs. Nothing third-party is redistributed in this repo.
+`python fetch_sources.py` downloads the first four online sources once (the GitHub banks below were downloaded by hand into `sources/online/`; `online_parsers.py` parses them) (a few seconds apart, robots.txt allowed, no logins), `python -I build_csv.py` parses them, dedupes by stem and writes the CSVs. Nothing third-party is redistributed in this repo.
 
 Study cards: `python build_notes.py <slides.pdf>` turns a course slide deck into `data/study_notes.csv` (private, gitignored).
 
